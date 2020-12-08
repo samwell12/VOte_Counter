@@ -9,8 +9,8 @@ var mention_count = {};
 
 client.on('message', message => {
   for (let id of message.mentions.users.keyArray()) {
-    if (!mention_count[id]) mention_count[id] = 1;
-    else mention_count[id]++;
+    if (!mention_count[samwell]) mention_count[samwell] = 1;
+    else mention_count[samwell]++;
   }
 });
   }
