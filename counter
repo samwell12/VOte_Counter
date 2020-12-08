@@ -5,9 +5,14 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
-client.on("message", (message) => {
-  if (message.content.startsWith("ping")) {
-    message.channel.send("pong!");
+var mention_count = {};
+
+client.on('message', message => {
+  for (let id of message.mentions.users.keyArray()) {
+    if (!mention_count[id]) mention_count[id] = 1;
+    else mention_count[id]++;
+  }
+});
   }
 });
 
